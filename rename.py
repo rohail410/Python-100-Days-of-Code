@@ -10,13 +10,15 @@ def add_numbering_to_folders():
             f for f in os.listdir(directory)
             if os.path.isdir(os.path.join(directory, f)) and f != ".git"
         ]
-        folders.sort()  # Sort folders alphabetically to ensure ascending order
+        
+        # Sort folders alphabetically to ensure proper order
+        folders.sort()
 
-        # Loop through folders and rename them with numbering
+        # Loop through folders and rename them with numbering and leading zeros
         for idx, folder in enumerate(folders, start=1):
             folder_path = os.path.join(directory, folder)
-            # Create the new name with numbering
-            new_name = f"{idx}.{folder}"
+            # Create the new name with numbering and leading zeros (e.g., 01, 02, 03)
+            new_name = f"{idx:02d}.{folder}"  # Number with leading zeros
             new_folder_path = os.path.join(directory, new_name)
             
             # Rename the folder
