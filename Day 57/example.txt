@@ -1,0 +1,4 @@
+Hello.
+This is an example file
+We are learning about File I/O
+Adding another line in the end
